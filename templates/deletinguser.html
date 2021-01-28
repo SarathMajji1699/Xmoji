@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>ADMIN | Delete User </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lustyle.css') }}">
+  <link href="../static/css/lustyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/font-awesome/css/font-awesome.css">
+  </head>
+
+<body>
+  <!-- <header>
+		<nav>
+      <h1>Xmoji</h1>
+			<ul id="navli">
+        <li><a href="/adminview" class="homeblack">Dashboard</a></li>
+        <li><a href="/addusers" class="homeblack">Add User</a></li>
+        <li><a href="/deletinguser" class="homered">Delete User</a></li>
+        <li><a class="homeblack" href="/adminlogin">LogOut</a></li>
+			</ul>
+		</nav>
+  </header>
+  <div class="divider"></div> -->
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: black;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mr-auto" href="/" style="margin-left:8%; font-family: 'Lobster', cursive; font-weight: 400; font-size: 20px;"><b>XMOJI</b></a>
+      <div class="collapse navbar-collapse" id="Navbar" >
+        <ul class="navbar-nav" style="margin-left: 61%;display: inline;float: right;">
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/adminview"><span class="fa fa-columns fa-lg"></span> Dashboard</a></li>
+          &nbsp;
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/addusers"><span class="fa fa-users fa-lg"></span> Add Users</a></li>
+          &nbsp;
+          <li class="nav-item active" style="display: inline-block;float: left;"><a class="nav-link" href="/deletinguser"><span class="fa fa-trash fa-lg"></span> Delete Users</a></li>
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/adminlogin"><span class="fa fa-sign-out fa-lg"></span>LogOut</a></li>
+          <!-- <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="./register"><span class="fa fa-address-card fa-lg"></span> register</a></li> -->
+        </ul>
+
+      </div>
+
+   </nav>
+
+<div class="fixed-top" style="background-color: red; top:7%; height: 7px; width: 100%;"></div>
+<div class="aimg" style="margin-top: 7%;float: left;">
+  <img src="https://raw.githubusercontent.com/YaswanthKota/emojifypics/main/delete.png" width="80%" height="100%"/>
+</div>
+  <div class="loginbox" style="top: 10%;">
+    <img src="https://img.favpng.com/17/1/20/user-profile-computer-icons-login-png-favpng-w4PDSTJJhQAyy1K6Dbdyjx4XW.jpg" class="avatar" alt="avtar">
+      <h1>Delete User</h1>
+          <form action="{{ url_for('deleteuser') }}" method="post" >
+            <div class="msg">{{ msg }}</div></br>
+              <input id="username" name="username" type="text" placeholder="Enter User Username" class="textbox"/></br></br>
+              <input id="email" name="email" type="text" placeholder="Enter User Email ID" class="textbox"/></br></br></br>
+              <input type="submit" class="btn" value="Delete User"></br>
+              <h1>{{info}}</h1>
+          </form>
+    </div>
+</body>
+</html>

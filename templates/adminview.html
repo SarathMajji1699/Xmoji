@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>ADMIN</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lustyle.css') }}">
+  <link rel="stylesheet" type="text/css" href="../static/css/lustyle.css">
+  <link rel="stylesheet" href="../static/css/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/font-awesome/css/font-awesome.css">
+  <style>
+#users {
+    position: relative;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  left: 40px;
+}
+
+#users td, #users th {
+  border: 1px solid #ddd;
+  background-color: #4CAF50;
+
+  padding: 8px;
+}
+#users th:hover{ background-color: black;}
+#users td:hover {background-color:blanchedalmond;}
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #ff4d4d;
+  color: white;
+}
+div{
+    left: 50px;
+}
+  </style>
+  </head>
+
+<body style="background-color: #ffff66;">
+  <!-- <header>
+		<nav>
+      <h1>Xmoji</h1>
+			<ul id="navli">
+        <li><a href="/adminview" class="homered">Dashboard</a></li>
+                <li><a href="/addusers" class="homeblack">Add User</a></li>
+                <li><a href="/deletinguser" class="homeblack">Delete User</a></li>
+                <li><a class="homeblack" href="/adminlogin">LogOut</a></li>
+			</ul>
+        </nav>
+  </header>
+  <div class="divider"></div> -->
+
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: black;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mr-auto" href="/" style="margin-left:8%; font-family: 'Lobster', cursive; font-weight: 400; font-size: 20px;"><b>XMOJI</b></a>
+      <div class="collapse navbar-collapse" id="Navbar" >
+        <ul class="navbar-nav" style="margin-left: 61%;display: inline;float: right;">
+          <li class="nav-item active" style="display: inline-block;float: left;"><a class="nav-link" href="/adminview"><span class="fa fa-columns fa-lg"></span> Dashboard</a></li>
+          &nbsp;
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/addusers"><span class="fa fa-users fa-lg"></span> Add Users</a></li>
+          &nbsp;
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/deletinguser"><span class="fa fa-trash fa-lg"></span> Delete Users</a></li>
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/adminlogin"><span class="fa fa-sign-out fa-lg"></span>LogOut</a></li>
+          <!-- <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="./register"><span class="fa fa-address-card fa-lg"></span> register</a></li> -->
+        </ul>
+
+      </div>
+
+   </nav>
+
+<div class="fixed-top" style="background-color: red; top:7%; height: 7px; width: 100%;"></div>
+
+  <br><br><br><br><br><h1 align="center">Welcome to Xmoji  {{ user }}  !</h1><br><br>
+  <div>
+  <table id="users">
+    <th>  <b>S.No</b> </th>
+    <th>  <b>Name</b> </th>
+    <th><b>Email</b>  </th>
+    <th><b>Mobile No.</b>  </th>
+    <th><b>Password</b>  </th>
+  {% for row in userslist %}
+    <tr>
+        <td>{{row}}</td>
+        <td>{{userslist[row][0]}}</td>
+        <td>{{userslist[row][1]}}</td>
+        <td>{{userslist[row][2]}}</td>
+        <td>{{userslist[row][3]}}</td>
+    </tr>
+  {% endfor %}
+</table>
+</div>
+</body>
+</html>

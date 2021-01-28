@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>Register Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rstyle.css') }}">
+  <link rel="stylesheet" type="text/css" href="..\static\css\rstyle.css">
+<link rel="stylesheet" href="../static/css/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/css/font-awesome/css/font-awesome.css">
+  </head>
+
+<body style="background-color: #f7f7f7">
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: black;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="/" style="margin-left:8%; font-family: 'Lobster', cursive; font-weight: 400; font-size: 20px;"><b>XMOJI</b></a>
+        <div class="collapse navbar-collapse" id="Navbar" >
+          <ul class="navbar-nav" style="margin-left: 83%; display: inline;float: right;">
+            <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/"><span class="fa fa-home fa-lg"></span> Home</a></li>
+            &nbsp;
+            <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link active" href="/register"><span class="fa fa-address-card fa-lg"></span>&nbsp;Register</a></li>
+
+                  </ul>
+
+        </div>
+    </nav>
+    <div class="fixed-top" style="background-color: red; top:7%; height: 7px; width: 100%;"></div>
+  <div class="rimg" style="margin-top: 5%;float: left; margin-left: 15%;">
+    <!-- <img src='https://raw.githubusercontent.com/YaswanthKota/emojifypics/main/register.png' width="85%" height="100%"/> -->
+    <img src='https://raw.githubusercontent.com/YaswanthKota/emojifypics/main/register.png' width="98%" height="98%"/>
+  </div>
+  <div class="loginbox" style="top:8%;height:75%;">
+    <img src="https://img.favpng.com/17/1/20/user-profile-computer-icons-login-png-favpng-w4PDSTJJhQAyy1K6Dbdyjx4XW.jpg" class="avatar" alt="avtar">
+      <h1>Register Here </h1>
+          <form action="{{ url_for('register') }}" method="post" >
+            <div class="msg">{{ msg }}</div>
+              <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox" required/><br>
+              <input id="password" name="password" type="password" placeholder="Enter Your Password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$*-]).{8,}$" class="textbox" required/>
+            <div id="message">
+            <h5>Password must contain the following:</h5>
+            <p id="letter" class="invalid">A lowercase letter</p>
+            <p id="capital" class="invalid">A capital (uppercase) letter</p>
+            <p id="number" class="invalid">A number</p>
+            <p id="length" class="invalid">Minimum 8 characters</p>
+            <p id="special" class="invalid">Special character like #?!@$*-</p>
+          </div><br>
+              <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox" required/><br>
+              <input id="phone" name="phone" type="text" placeholder="Enter Your Mobile No." pattern="[789][0-9]{9}" class="textbox" required/>
+              <div id="pmsg">
+              <h5>Enter a valid phone number</h5>
+              </div>
+              <br><br>
+              <input type="submit" class="btn" value="Sign Up">
+              <center>
+              <h1>{{info}}</h1>
+              <p>Already have an account?<a class="bottom" href="{{url_for('userlogin')}}">&nbsp;&nbsp;&nbsp;Login here</a></p>
+            </center>
+          </form>
+    </div>
+<script src="{{ url_for('static', filename='js/validate.js') }}" type="text/javascript"></script>
+<script src="..\static\js\validate.js" type="text/javascript"></script>
+</html>

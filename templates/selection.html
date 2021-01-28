@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Xmoji</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/css/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/select.css') }}">
+    <link rel="stylesheet" type="text/css" href="..\static\css\select.css">
+  </head>
+
+<body>
+   <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: black;">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+						<span class="navbar-toggler-icon"></span>
+				</button>
+        <a class="navbar-brand mr-auto" href="/" style="margin-left:8%; font-family: 'Lobster', cursive; font-weight: 400; font-size: 20px;"><b>XMOJI</b></a>
+  			<div class="collapse navbar-collapse" id="Navbar" >
+					<ul class="navbar-nav" style="margin-left: 82%; display: inline;float: right;">
+            &nbsp;
+            <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link active" href="/selection"><span class="fa fa-window-minimize"></span>&nbsp;Selection</a></li>
+
+            <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/userlogin"><span class="fa fa-sign-out fa-lg"></span>&nbsp;LogOut</a></li>
+
+									</ul>
+
+				</div>
+
+		</nav>
+    <div class="fixed-top" style="background-color: red; top:7%; height: 7px; width: 100%;"></div>
+
+<br><br><br><br><h1 align="center">Welcome to Xmoji  {{ user }}  !</h1>
+<div class="simg" style="float: left;">
+  <img src="https://github.com/YaswanthKota/emojifypics/blob/main/IMG-20210109-WA0016.jpg?raw=true" width="85%" height="78%"/>
+</div>
+<br><br><br><br><br>
+<a type ="button" class="btn  btn-primary .text-secondary btn-lg" href="/picture" style="width: 15%; margin-left: 100px;">Upload an Image</a><br><br><br>
+<a class="btn btn-dark btn-inline-danger btn-lg" href="/index" style="width: 15%; margin-left: 100px;"> &nbsp; Live Webcam &nbsp;</a><br><br><br>
+<a class="btn btn-success  btn-inline-danger  btn-lg" href="/changepass" style="width: 15%; margin-left: 100px;">Change Password</a><br>
+
+
+</body>
+</html>

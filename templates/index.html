@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Xmoji</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/css/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/font-awesome/css/font-awesome.css">
+    <style>
+	#bg {
+  	display: inline-block;
+  	width: 575px;
+    height: 500px;
+    /* margin-left: 3px; */
+    border: 3px solid black;
+	}
+  #emj {
+  	display: inline-block;
+  	width: 475px;
+    height: 500px;
+    border: 3px solid black;
+    margin-left: 10px;
+	}
+  #bg2 {
+  	display: inline-block;
+  	width: 430px;
+    height: 500px;
+    border: 3px solid black;
+    margin-left: 10px;
+	}
+    </style>
+    </head>
+  <body>
+  		<nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: black;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand mr-auto" href="/" style="margin-left:8%; font-family: 'Lobster', cursive; font-weight: 400; font-size: 20px;"><b>XMOJI</b></a>
+            <div class="collapse navbar-collapse" id="Navbar" >
+            <ul class="navbar-nav" style="margin-left: 74%; display: inline;float: right;">
+              <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/selection"><span class="fa fa-window-minimize"></span> Selection</a></li>
+              &nbsp;
+              <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link active" href="/index"><span class="fa fa-camera"></span>&nbsp;Live Web Cam</a></li>
+
+              <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/userlogin"><span class="fa fa-sign-out fa-lg"></span>LogOut</a></li>
+
+                    </ul>
+
+          </div>
+    </nav>
+    <div class="fixed-top" style="background-color: red; top:7%; height: 7px; width: 100%;"></div>
+    <center>
+    <br>   <br>    <br>  <br>
+
+    <h1 align="center">Welcome to Xmoji  {{ user }}  !</h1><br>
+
+    <img id="bg"  src="{{ url_for('video_feed') }}">
+    <img id="bg2"  src="{{ url_for('video_cartoon') }}">
+    <img id="emj"  src="{{ url_for('video_emj')  }}">
+  </center>
+  </body>
+</html>

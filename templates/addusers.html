@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>ADMIN | Add User</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rstyle.css') }}">
+  <link href="../static/css/rstyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/font-awesome/css/font-awesome.css">
+  </head>
+
+<body class="body">
+  <!-- <header>
+		<nav>
+      <h1>Xmoji</h1>
+			<ul id="navli">
+                <li><a href="/adminview" class="homeblack">Dashboard</a></li>
+                <li><a href="/addusers" class="homered">Add User</a></li>
+                <li><a href="/deletinguser" class="homeblack">Delete User</a></li>
+                <li><a class="homeblack" href="/adminlogin">LogOut</a></li>
+			</ul>
+		</nav>
+  </header> -->
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: black;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mr-auto" href="/" style="margin-left:8%; font-family: 'Lobster', cursive; font-weight: 400; font-size: 20px;"><b>XMOJI</b></a>
+      <div class="collapse navbar-collapse" id="Navbar" >
+        <ul class="navbar-nav" style="margin-left: 60%;display: inline;float: right;">
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/adminview"><span class="fa fa-columns fa-lg"></span> Dashboard</a></li>
+          &nbsp;
+          <li class="nav-item active" style="display: inline-block;float: left;"><a class="nav-link" href="/addusers"><span class="fa fa-users fa-lg"></span> Add Users</a></li>
+          &nbsp;
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/deletinguser"><span class="fa fa-trash fa-lg"></span> Delete Users</a></li>
+          <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="/adminlogin"><span class="fa fa-sign-out fa-lg"></span>LogOut</a></li>
+          <!-- <li class="nav-item" style="display: inline-block;float: left;"><a class="nav-link" href="./register"><span class="fa fa-address-card fa-lg"></span> register</a></li> -->
+        </ul>
+
+      </div>
+
+   </nav>
+
+<div class="fixed-top" style="background-color: red; top:7%; height: 7px; width: 100%;"></div>
+<div class="aimg" style="margin-top: 7%;float: left;">
+  <img src="https://raw.githubusercontent.com/YaswanthKota/emojifypics/main/adding%20user.jpeg" width="80%" height="100%"/>
+</div>
+  <div class="loginbox" style="top: 10%;">
+    <img src="https://img.favpng.com/17/1/20/user-profile-computer-icons-login-png-favpng-w4PDSTJJhQAyy1K6Dbdyjx4XW.jpg" class="avatar" alt="avtar">
+      <h1>Add User</h1>
+          <form action="{{ url_for('addinguser') }}" method="post" >
+            <div class="msg">{{ msg }}</div><br>
+            <input id="username" name="username" type="text" placeholder="Enter  Username" class="textbox" required/><br>
+            <input id="password" name="password" type="password" placeholder="Enter Password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$*-]).{8,}$" class="textbox" required/>
+          <div id="message">
+          <h5>Password must contain the following:</h5>
+          <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number" class="invalid">A <b>number</b></p>
+          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          <p id="special" class="invalid">Special character like <b>#?!@$*-</b></p>
+        </div><br>
+            <input id="email" name="email" type="text" placeholder="Enter Email ID" class="textbox" required/><br>
+            <input id="phone" name="phone" type="text" placeholder="Enter Mobile No." pattern="[789][0-9]{9}" class="textbox" required/>
+            <div id="pmsg">
+            <h5>Enter a valid phone number</h5>
+            </div>
+            <br><br>
+              <input type="submit" class="btn" value="Add User"><br>
+              <h1>{{info}}</h1>
+          </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/validate.js') }}" type="text/javascript"></script>
+    <script src="C:\Users\sarath\Documents\Python\project\Emojify\static\js\validate.js" type="text/javascript"></script>
+</body>
+</html>
